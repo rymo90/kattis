@@ -1,3 +1,5 @@
+#zip and dictinary was used in this exercise!
+
 s = int(input())
 n = input()
 namn = {
