@@ -1,2 +1,2 @@
-# Kattis
-programming challenge 
+# Kattis and Hackerrank 
+## programming challenge 
