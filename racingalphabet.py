@@ -1,19 +1,22 @@
+
+
 import math
+INDEX = {c: i for i, c in enumerate("ABCDEFGHIJKLMNOPQRSTUVWXYZ '")}
+CIRCUM = math.pi*60
+SPEED = 15
+
+
+def circle_distance(a, b):
+    d = min(abs(INDEX[a]-INDEX[b]),
+            len(INDEX) - abs(INDEX[a]-INDEX[b]))
+    return CIRCUM*(d/len(INDEX))
+
+
 n = int(input())
-alpha = list("ABCDEFGHIJKLMNOPQRSTUWVXYZ '")
-start = (2*math.pi*30)//len(alpha)
+
 for _ in range(n):
-    x = input()
-    feet = 15
-    for j in range(len(x)-1):
-        letter = x[j]
-        index = alpha.index(letter)
-        nextletter = x[j+1]
-        nextidex = alpha.index(nextletter)
-        if index > nextidex:
-            print(letter, index, nextletter, nextidex,
-                  "left", index-nextidex)
-        else:
-            print(letter, index, nextletter, nextidex,
-                  "right", index-nextidex)
-    break
+    s = input()
+    time = len(s)
+    for a, b in zip(s, s[1:]):
+        time += circle_distance(a, b)/SPEED
+    print(time)
