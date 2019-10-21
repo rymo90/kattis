@@ -16,13 +16,12 @@ while start:
                 else:
                     lis.append(_)
         lis = sorted(lis)
-
         for j in range(len(lis)):
             lis2 = []
             for key in dict:
                 if lis[j] in dict[key]:
                     lis2.append(key)
-            lis2 = sorted(lis2)        
+            lis2 = sorted(lis2)
             print(lis[j], *lis2)
 
         print("")
